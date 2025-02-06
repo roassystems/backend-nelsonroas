@@ -5,7 +5,6 @@ import {
   validateLogin,
   authenticateToken,
 } from "../middlewares/auth.middleware";
-import { validationResult } from "express-validator";
 
 const router = Router();
 /**
@@ -81,7 +80,6 @@ export const validateRequest = (
 router.post(
   "/registrarUsuario",
   validateRegister,
-  //validateRequest,
   async (req: Request, res: Response) => {
     await register(req, res);
   }

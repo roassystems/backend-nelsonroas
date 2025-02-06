@@ -22,15 +22,15 @@ export const authenticateToken = (
     const token = req.header("Authorization");
     if (!token) {
       res.status(401).json({ ok: false, mensaje: "Acceso denegado" });
-      return; // Detiene la ejecución
+      return; 
     }
 
     const decoded = jwt.verify(token, jwtSecret);
     (req as any).user = decoded; //Agregar usuario al request con TypeScript
-    next(); // Solo se ejecuta si no hubo error
+    next(); 
   } catch (error) {
     res.status(403).json({ ok: false, mensaje: "Token inválido" });
-    return; // Detiene la ejecución
+    return; 
   }
 };
 // Middleware de validación y sanitización de datos en el registro
