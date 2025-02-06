@@ -10,8 +10,17 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
-// Middleware de seguridad OWASP
-app.use(helmet());
+// Middleware de seguridad OWASP, aplicando cabeceras de seguridad
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      "script-src": ["'self'", process.env.DOMINIO_APP_WEB || ""],
+      "style-src": ["'self'", process.env.STYLE_FONT_SRC || ""],
+      "font-src": ["'self'", process.env.STYLE_FONT_SRC || ""],
+    },
+  },
+  
+}));
 
 // Configuración de CORS
 // Configuración de CORS para restringir acceso
