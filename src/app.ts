@@ -17,6 +17,7 @@ app.use(helmet({
       "script-src": ["'self'", process.env.DOMINIO_APP_WEB || ""],
       "style-src": ["'self'", process.env.STYLE_FONT_SRC || ""],
       "font-src": ["'self'", process.env.STYLE_FONT_SRC || ""],
+      "default-src": ["'self'", process.env.STYLE_FONT_SRC || ""],
     },
   },
   
