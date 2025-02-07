@@ -18,6 +18,27 @@ npm install
 .env```
 
 4. Llenar las variables de entorno definidas en el ```.env```
+```
+IMPORTANTE, NO MODIFICAR EL PUERTO 5439, ESTA ASOCIADO A DOCKER COMPOSE
+``` 
+```
+DB_PASSWORD=clavedebd
+DB_NAME=nombre_base_datos
+DB_HOST=localhost
+DB_PORT=5439
+DB_USERNAME=postgres
+DATABASE_URL="postgresql://postgres:clavedebd@localhost:5439/nombre_base_datos?schema=esquemaNelsonRoas"
+
+#CONFIGURACION JWT
+JWT_SECRET="MI_secreto_2025"
+PORT=3000
+#APLICACION FRONTEND AUTORIZADA A CONSUMIR ESTE BACKEND, POR POLITICAS CORS
+#FRONTEND_URL="http://localhost:5173"
+FRONTEND_URL="*"
+#CONFIGURACION DE CABECERAS DE SEGURIDAD OWASP, DATOS DEL SERVIDOR DONDE SE DESPLIEGA
+DOMINIO_APP_WEB=localhost
+STYLE_FONT_SRC=http://localhost:3000
+```
 5. Levantar la base de datos postgresql
 ```
 docker-compose up -d
