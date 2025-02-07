@@ -29,7 +29,7 @@ export const registerUser = async ({
       status: 400,
       ok: false,
       mensaje:
-        "La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula. Puede tener otros símbolos.",
+        "La contraseña debe tener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula. Puede tener otros símbolos.",
     };
   } else if (!validateEmail(correo)) {
     return { status: 400, ok: false, mensaje: "Formato de correo incorrecto" };
