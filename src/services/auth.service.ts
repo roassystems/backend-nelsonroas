@@ -58,7 +58,7 @@ export const loginUser = async ({ correo, clave }: LoginInterface) => {
   if (!user || !(await bcrypt.compare(clave, user.clave))) {
     return { status: 401, ok: false, mensaje: "Credenciales inválidas" };
   }
-  const token = jwt.sign({ id: user.id, correo: user.correo }, jwtSecret, {
+  const token = jwt.sign({ id: user.id, correo: user.correo, nombre:user.nombre, apellido:user.apellido }, jwtSecret, {
     expiresIn: "1h",
   });
   return { status: 200, ok: true, mensaje: "Login exitoso", token };
