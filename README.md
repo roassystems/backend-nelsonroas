@@ -65,10 +65,22 @@ npm run start
 * Version de Node JS: v18.20.2
 
 
-# Production Build
-1. Crear el archivo ```.env.prod```
-2. Llenar las variables de entorno de prod
-3. Crear la nueva imagen
+# FORMA ALTERNA DE LEVANTAR ESTE BACKEND USANDO DOCKER-COMPOSE
+1. Ejecutar comando ```docker-compose down -v```
+2. Ejecutar comando ```docker-compose -f docker-compose-full-nelsonroas.yml down -v```
+3. Ejecutar comando ```docker-compose -f docker-compose-full-nelsonroas.yml up -d --build```
+4. Ejecutar comando ```docker-compose -f docker-compose-full-nelsonroas.yml exec backend sh```
+5. Ejecutar comando ```npx prisma migrate dev --name init``` y responder Y a la pregunta del shell
+6. Ejecutar comando ```npx prisma db pull```
+7. Ejecutar comando ```npx prisma generate```
+8. Ejecutar comando ```exit```
+8. Ejecutar comando ```docker-compose -f docker-compose-full-nelsonroas.yml ps``` y validar que este corriendo los servicios de base de datos y backend
+8. Ahora ya se pueden consumir los servicios de registro de usuario y login, en las siguientes url
 ```
-docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build
+Request POST http://localhost:3000/api/auth/registrarUsuario
+
+Request POST 
+http://localhost:3000/api/auth/login
+
+Mas informacion swagger de APis en http://localhost:3000/api-docs/
 ```

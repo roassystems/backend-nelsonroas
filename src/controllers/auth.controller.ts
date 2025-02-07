@@ -9,6 +9,7 @@ export const register = async (req: Request, res: Response): Promise<void> => {
     const response = await registerUser(req.body);
     res.status(response.status).json(response);
   } catch (error) {
+    console.log("ojo error en registro "+error);
     res.status(500).json({ ok: false, mensaje: "Error interno del servidor" });
   }
 };

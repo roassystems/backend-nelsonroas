@@ -22,6 +22,7 @@ app.use(helmet({
   },
   
 }));
+//app.use(helmet({}));
 
 // Configuración de CORS
 // Configuración de CORS para restringir acceso

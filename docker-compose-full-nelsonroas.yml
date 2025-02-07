@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres:15.3
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_DB: mydatabase
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+    ports:
+      - "5440:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  backend:
+    build: .
+    container_name: express_backend_nelsonroas
+    restart: always
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgresql://myuser:mypassword@postgres:5432/mydatabase
+      JWT_SECRET: mysupersecretkey
+      PORT: 3000
+      FRONTEND_URL: "*"
+      DOMINIO_APP_WEB: localhost
+      STYLE_FONT_SRC: http://localhost:3000
+    ports:
+      - "3000:3000"
+
+volumes:
+  postgres_data:
