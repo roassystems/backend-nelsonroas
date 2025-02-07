@@ -5,12 +5,16 @@ Ing. Nelson Roas.
 
 # Ejecutar en desarrollo
 
-1. Clonar el repositorio
-2. Ejecutar
+1. Clonar el repositorio con el comando
+```
+git clone https://github.com/roassystems/backend-nelsonroas.git
+```
+2. ubicarse en el directorio del proyecto backend-nelsonroas y ejecutar el comando:
 ```
 npm install
 ```
-3. Clonar el archivo ```.env.template``` y renombrar la copia a ```
+
+3. ubicarse en el directorio del proyecto backend-nelsonroas y Copiar el archivo ```.env.template``` y renombrar la copia a ```
 .env```
 
 4. Llenar las variables de entorno definidas en el ```.env```
@@ -18,14 +22,17 @@ npm install
 ```
 docker-compose up -d
 ```
+6. estando en el directorio del proyecto backend-nelsonroas y ejecutar el comando:
+```
+npm run build
+```
 
-
-6. Ejecutar el siguiente comando, para generar la base de
-```datos
+7. Ejecutar el siguiente comando, para generar la base de datos
+```
 npx prisma migrate dev --name init
 
 ```
-7. Ejecutar la aplicación en dev:
+8. Ejecutar la aplicación en dev:
 ```
 npm run start
 ```
