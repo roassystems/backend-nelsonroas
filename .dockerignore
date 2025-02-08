@@ -4,3 +4,9 @@ logs/
 .git
 *.md
 .cache
+node_modules
+dist
+npm-debug.log
+Dockerfile
+.dockerignore
+.env
