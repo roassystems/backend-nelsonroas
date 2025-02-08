@@ -66,15 +66,39 @@ npm run start
 
 
 # FORMA ALTERNA DE LEVANTAR ESTE BACKEND USANDO DOCKER-COMPOSE
-1. Ejecutar comando ```docker-compose down -v```
-2. Ejecutar comando ```docker-compose -f docker-compose-full-nelsonroas.yml down -v```
-3. Ejecutar comando ```docker-compose -f docker-compose-full-nelsonroas.yml up -d --build```
-4. Ejecutar comando ```docker-compose -f docker-compose-full-nelsonroas.yml exec backend sh```
-5. Ejecutar comando ```npx prisma migrate dev --name init``` y responder Y a la pregunta del shell
-6. Ejecutar comando ```npx prisma db pull```
-7. Ejecutar comando ```npx prisma generate```
-8. Ejecutar comando ```exit```
-8. Ejecutar comando ```docker-compose -f docker-compose-full-nelsonroas.yml ps``` y validar que este corriendo los servicios de base de datos y backend
+1. Ejecutar comando 
+```
+docker-compose down -v
+```
+2. Ejecutar comando 
+```
+docker-compose -f docker-compose-full-nelsonroas.yml down -v
+```
+3. Ejecutar comando 
+```
+docker-compose -f docker-compose-full-nelsonroas.yml up -d --build
+```
+4. Ejecutar comando
+ ```
+ docker-compose -f docker-compose-full-nelsonroas.yml exec backend sh
+ ```
+5. Ejecutar comando y responder Y a la pregunta del shell
+```
+npx prisma migrate dev --name init 
+```
+6. Ejecutar comando 
+```npx prisma db pull
+```
+7. Ejecutar comando 
+```npx prisma generate
+```
+8. Ejecutar comando 
+```exit
+```
+8. Ejecutar comando y validar que este corriendo los servicios de base de datos y backend
+```
+docker-compose -f docker-compose-full-nelsonroas.yml ps
+``` 
 8. Ahora ya se pueden consumir los servicios de registro de usuario y login, en las siguientes url
 ```
 Request POST http://localhost:3000/api/auth/registrarUsuario
