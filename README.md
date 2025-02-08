@@ -87,13 +87,16 @@ docker-compose -f docker-compose-full-nelsonroas.yml up -d --build
 npx prisma migrate dev --name init 
 ```
 6. Ejecutar comando 
-```npx prisma db pull
+```
+npx prisma db pull
 ```
 7. Ejecutar comando 
-```npx prisma generate
+```
+npx prisma generate
 ```
 8. Ejecutar comando 
-```exit
+```
+exit
 ```
 8. Ejecutar comando y validar que este corriendo los servicios de base de datos y backend
 ```
