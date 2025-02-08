@@ -68,37 +68,29 @@ npm run start
 # FORMA ALTERNA DE LEVANTAR ESTE BACKEND USANDO DOCKER-COMPOSE
 1. Ejecutar comando 
 ```
-docker-compose down -v
-```
-2. Ejecutar comando 
-```
-docker-compose -f docker-compose-full-nelsonroas.yml down -v
-```
-3. Ejecutar comando 
-```
 docker-compose -f docker-compose-full-nelsonroas.yml up -d --build
 ```
-4. Ejecutar comando
+2. Ejecutar comando
  ```
  docker-compose -f docker-compose-full-nelsonroas.yml exec backend sh
  ```
-5. Ejecutar comando y responder Y a la pregunta del shell
+3. Ejecutar comando y responder Y a la pregunta del shell
 ```
 npx prisma migrate dev --name init 
 ```
-6. Ejecutar comando 
+4. Ejecutar comando 
 ```
 npx prisma db pull
 ```
-7. Ejecutar comando 
+5. Ejecutar comando 
 ```
 npx prisma generate
 ```
-8. Ejecutar comando 
+6. Ejecutar comando 
 ```
 exit
 ```
-8. Ejecutar comando y validar que este corriendo los servicios de base de datos y backend
+7. Ejecutar comando y validar que este corriendo los servicios de base de datos y backend
 ```
 docker-compose -f docker-compose-full-nelsonroas.yml ps
 ``` 
